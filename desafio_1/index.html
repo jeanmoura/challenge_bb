@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- 
+Semana 2 – 26a30/09/2022
+Introdução à Javascript
+Curso 200535 Javascript: Programando na linguagem web (Capítulos 1 ao 4)
+Desafio 1 
+Mínimo necessário:
+
+Com base no conteúdo proposto para primeira semana, curso 200535 (Javascript: Programando na linguagem da web), capítulos 1 ao 4, construa:
+1.	Uma página Web (HMTL, CSS e Javascript) que contenha um formulário onde seja possível indicar CPF, Nome do Cliente, Data de Nascimento e Renda;
+2.	Um botão para ‘incluir’ os dados acima em uma tabela;
+3.	Se a renda do cliente for inferior a UM salário-mínimo, a linha deverá ficar vermelha e surgir um alerta com mensagem referente a indício de trabalho escravo;
+4.	A tabela deve ter uma coluna com a Idade do cliente que deverá ser calculada automaticamente através da data de nascimento;
+5.	A página deve possuir um totalizador de renda da tabela que é recalculado automaticamente a cada nova inserção;
+
+Bônus opcional:
+1.	Se renda inferior a um salário-mínimo, deverá haver um input para justificar;
+2.	Incluir a possibilidade de o usuário conseguir excluir alguma linha selecionada;
+ -->
+	<head>
+		<meta charset="UTF-8">
+		<title>Academia de Talentos TI - Desafio 1</title>
+		<link rel="icon" href="img/bb_logo.png" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	</head>
+	<body>
+
+		<header>
+			<div class="container">
+				<h2 class="titulo">Sugestão de Resposta para o Desafio 1:</h2>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2>Tabela de Clientes</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Nome do Cliente</th>
+							<th>Data de Nascimento</th>
+							<th>Renda</th>
+							<th>CPF</th>
+							<!--<th>Matricul</th>-->
+							<!--<th>Justificativa</th> -->
+						</tr>
+					</thead>
+					<tbody id="tabela-clientes">					
+					</tbody>
+					<tfoot>
+						<tr>
+							<th colspan="2"></th>
+							<th>Somatórios das Rendas -></th>						
+							<th id="somatorioRendas">0,00</th>
+							<!--<th></th>-->
+						</tr>
+					</tfoot>
+				</table>
+
+			</section>
+		</main>
+
+		<section class="container">
+		    <h2 id="titulo-form">Incluir novo cliente</h2>
+		    <form id="form-inclui">
+		        <div class="grupo2">
+		            <label for="nome">Nome</label>
+		            <input id="nome" name="nome" type="text" placeholder="XXXX da Silva" class="campo campo-medio">
+		        </div>
+				
+				<div class="grupo">
+		            <label for="dataNascimento">Data de Nascimento</label>
+		            <input id="altdataNascimentoura" name="dataNascimento" type="date" placeholder="" class="campo campo-medio">
+		        </div>
+
+				<div class="grupo">
+		            <label for="renda">Renda</label>
+		            <input id="renda" type="number"  min="0" max="999999" placeholder="$ 0,00" class="campo campo-medio">
+		        </div>
+
+				<div class="grupo">
+		            <label for="cpf">CPF</label>
+		            <input id="cpf" name="cpf" type="text" placeholder="xxx.xxx.xxx-xx" class="campo campo-medio">
+		        </div>
+		       
+				<!--<div class="grupo">
+					<label for="matricula">Matricula</label>
+					<input id='matricula' type="text" placeholder="FXXXXXXX" class="campo campo-medio">
+				</div>
+				-->
+		        
+		        
+
+		        <button id="incluirCliente" class="botao bto-principal">Incluir Cliente</button>
+		    </form>
+		</section>
+
+		<!--<script type = "module" src="js/principal.js" ></script>-->
+		<script type = "module" src="js/get.js" ></script> 
+		<!--<script type = "module" src="js/post.js" ></script> -->
+
+	</body>
+</html>
