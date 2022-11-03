@@ -13,13 +13,11 @@ incluirCliente.addEventListener("click", function(event) {
     let dataNascimento = form.dataNascimento.value
     let renda = form.renda.value   
     let cpf = form.cpf.value
-    let mat = form.matricula.value;
     let idade = calculaIdade(dataNascimento)
-    
     let justificativa = verificaRenda(renda) 
-    let matricula = form.matricula.value
-
     
+
+// SEPARAR O CODIGO A PARTIR DAQUI COMECA O GET    
     //cria a linha da tabela para la tabelaClientes
     let clienteTr = document.createElement("tr")
 
@@ -30,13 +28,13 @@ incluirCliente.addEventListener("click", function(event) {
         clienteTr.className += "cliente-invalido "
     }
 
-    //atribuindo o conteudo das celulas para os atributos:
+    
     let cpfTd = document.createElement("td")
     let nomeTd = document.createElement("td")
     let dataNascimentoTd = document.createElement("td")
     let idadeTd = document.createElement("td")
     let rendaTd = document.createElement("td")
-    //let justificativaTd = document.createElement("td")
+    let justificativaTd = document.createElement("td")
     let matriculaTd = document.createElement("td")
 
     cpfTd.className += "info-cpf"
@@ -62,7 +60,7 @@ incluirCliente.addEventListener("click", function(event) {
     idadeTd.textContent = idade
     rendaTd.textContent = ajustaRenda(renda)
     clienteTr.appendChild(rendaTd)
-    //justificativaTd.textContent = justificativa
+    justificativaTd.textContent = justificativa
 
     clienteTr.appendChild(nomeTd)
     clienteTr.appendChild(dataNascimentoTd)
@@ -70,11 +68,10 @@ incluirCliente.addEventListener("click", function(event) {
     clienteTr.appendChild(cpfTd)
     //clienteTr.appendChild(matriculaTd)
     
-    //clienteTr.appendChild(idadeTd)
+    clienteTr.appendChild(idadeTd)
+    clienteTr.appendChild(justificativaTd)
     
-    cl//ienteTr.appendChild(justificativaTd)
     
-    tabelaClientes.appendChild()
 
     
     somarAsRendas()
@@ -214,4 +211,4 @@ tabelaClientes.addEventListener("dblclick", function(event) {
 
 
 
-
+}
